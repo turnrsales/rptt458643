@@ -1,0 +1,161 @@
+<header class="header-14-header-section header-14-service-section header-14">
+<nav class="navbar navbar-default navbar-fixed-top header-14-navbar">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand header-14-navbar-brand" href="index.html">
+<img alt="CoolAir" src="assets/images/header-14-logo.png"/>
+</a>
+<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#dynamic-header" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="dynamic-header"><ul class="nav navbar-nav navbar-right main-navigation text-uppercase font-lato"><li><a href="index.html">Home</a></li><li><a href="About_Us.html">About Us</a></li>
+<li class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" href="Services.html" role="button">Services</a>
+<ul class="dropdown-menu">
+<li><a href="Installation.html">Installation</a></li><li><a href="Repair.html">Repair</a></li><li><a href="Maintenance.html">Maintenance</a></li>
+</ul>
+</li><li><a href="Blog.html">Blog</a></li><li><a href="Contact_Us.html">Contact Us</a></li></ul></div>
+</div>
+</nav>
+</header>
+<section class="header-14-service-section main-header-section" style="background-image:url('assets/images/header-14-bg.jpg');">
+<div class="header-14-hero-overlay"></div>
+<div class="header-14-hero-shape header-14-hero-shape-one"></div>
+<div class="header-14-hero-shape header-14-hero-shape-two"></div>
+<div class="container">
+<div class="row">
+<div class="header-14-hero-text">
+<div class="header-14-tagline">
+<span>Complete HVAC Solutions</span>
+</div>
+<h1>
+					Comfort Built
+					<span>For Every Season</span>
+</h1>
+<p class="header-14-subtext">
+					Professional heating, ventilation and air conditioning
+					services designed for reliable performance, energy
+					efficiency and lasting comfort.
+				</p>
+<div class="header-14-hero-actions">
+<a class="header-14-schedule-btn" href="Contact_Us.html">
+<span>Schedule Service</span>
+<span class="header-14-btn-arrow">
+							→
+						</span>
+</a>
+<a class="header-14-explore-btn" href="Services.html">
+<span>View Services</span>
+<span class="header-14-explore-arrow">
+							↗
+						</span>
+</a>
+</div>
+<div class="header-14-trust-row">
+<div class="header-14-trust-item">
+<strong>01</strong>
+<span>Expert Service</span>
+</div>
+<div class="header-14-trust-line"></div>
+<div class="header-14-trust-item">
+<strong>02</strong>
+<span>Reliable Solutions</span>
+</div>
+<div class="header-14-trust-line"></div>
+<div class="header-14-trust-item">
+<strong>03</strong>
+<span>Year-Round Comfort</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="header-breadcrumb-section" style="background-image:url('assets/images/header-breadcrumb-section-bg.jpg');">
+<div class="header-breadcrumb-overlay"></div>
+<div class="container text-center">
+<div class="header-breadcrumb-content">
+<div class="header-breadcrumb-label">
+				CoolAir Services
+			</div>
+<h1 class="header-breadcrumb-section-title">
+<span class="Page_name">Page Name</span>
+</h1>
+<div class="header-breadcrumb-section-breadcrumb">
+<a href="index.html">
+					Home
+				</a>
+<span class="breadcrumb-separator">
+					/
+				</span>
+<span class="Page_name">
+					Page Name
+				</span>
+</div>
+</div>
+</div>
+</section>
+<script>
+	$(document).ready(function () {
+
+		var currentPage = window.location.pathname.split("/").pop().toLowerCase();
+
+		if (currentPage === "") {
+			currentPage = "index.html";
+		}
+
+		$('.header-14-navbar .main-navigation > li.main_page')
+			.removeClass('active');
+
+		$('.header-14-navbar .main-navigation > li.main_page > a')
+			.each(function () {
+
+				var linkPage = $(this)
+					.attr('href')
+					.split("/")
+					.pop()
+					.toLowerCase();
+
+				if (linkPage === currentPage) {
+
+					$(this)
+						.closest('li.main_page')
+						.addClass('active');
+
+				}
+
+			});
+
+		$('.header-14-navbar .dropdown-menu a')
+			.each(function () {
+
+				var linkPage = $(this)
+					.attr('href')
+					.split("/")
+					.pop()
+					.toLowerCase();
+
+				if (linkPage === currentPage) {
+
+					$(this)
+						.closest('.dropdown')
+						.addClass('active');
+
+					$(this)
+						.closest('.dropdown')
+						.find('> a')
+						.addClass('active');
+
+					$(this)
+						.closest('li')
+						.addClass('active');
+
+				}
+
+			});
+	});
+</script>
